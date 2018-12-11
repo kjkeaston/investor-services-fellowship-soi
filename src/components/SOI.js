@@ -58,6 +58,7 @@ class SOI extends Component {
         if(eachAsset.investment_date === this.state.investmentDate) {
           this.setState({
             tableDisplay: 'visible',
+            timestamp: new Date(),
             searchClicked: true,
             name: eachInvestment.name,
             assetClass: eachAsset.asset_class,
@@ -135,8 +136,8 @@ class SOI extends Component {
                 <td>{eachInvestment.name}</td>
                 <td></td>
                 <td></td>
-                <td>{eachInvestment.quantity}</td>
-                <td>{eachInvestment.cost.$}</td>
+                <td>{eachInvestment.quantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                <td>${eachInvestment.cost.$.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
               </tr>
                 {eachInvestment.issued_assets.map((eachAsset) => {
                   return(
@@ -144,8 +145,10 @@ class SOI extends Component {
                       <td></td>
                       <td>{eachAsset.asset_class}</td>
                       <td>{eachAsset.investment_date}</td>
-                      <td>{eachAsset.quantity}</td>
-                      <td>{eachAsset.cost.$}</td>
+                      {eachAsset.quantity !== null ? (
+                      <td>{eachAsset.quantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                      ):(<td>{eachAsset.quantity}</td>)}
+                      <td>${eachAsset.cost.$.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                     </tr>
                   )
               })}
@@ -176,8 +179,10 @@ class SOI extends Component {
                   <td></td>
                   <td>{this.state.assetClass}</td>
                   <td>{this.state.investmentDate}</td>
-                  <td>{this.state.quantity}</td>
-                  <td>{this.state.cost}</td>
+                  {this.state.quantity !== null ? (
+                    <td>{this.state.quantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                    ):(<td>{this.state.quantity}</td>)}
+                  <td>${this.state.cost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                 </tr>
               </tbody>
         </table>)}

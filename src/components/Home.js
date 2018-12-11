@@ -25,10 +25,11 @@ class Home extends Component {
 
   submitNameForm(e) {
     e.preventDefault();
-    // this.props.history.push('/soi');
-    this.setState({formSubmitted: true});
-
-
+    if(this.state.firstName && this.state.lastName) {
+      this.setState({formSubmitted: true});
+    } else {
+      alert("Please enter a first AND last name. Thank you!")
+    }
   }
 
   render() {
