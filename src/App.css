@@ -1,8 +1,5 @@
-/*.App {
-  text-align: center;
-}*/
-
 .App-header {
+  text-align: center;
   position: fixed;
   width: 100%;
   background-color: #3b4648;
@@ -21,32 +18,27 @@
   margin-top: 120px;
 }
 
-/*.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.padding-top {
+  padding-top: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.date-search-btn {
+  margin-top: 10px;
+}
+
+.table-header:hover {
+  color: #5a95f5;
+  cursor: pointer;
+}
+
+#investment-name-btn {
+  color: black;
+  width: 75%;
+  background-color: lightgray;
+}
+
+#investment-name-btn:hover {
   color: white;
+  width: 75%;
+  background-color: #5a6268;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/

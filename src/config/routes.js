@@ -8,4 +8,4 @@ export default (
     <Route exact path='/' component={ Home }/>
     <Route exact path='/soi' component={ SOI }/>
   </Switch>
-  )
+)

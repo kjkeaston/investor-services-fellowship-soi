@@ -35,35 +35,34 @@ class Home extends Component {
   render() {
     return (
       <div>
-      {this.state.formSubmitted ? (
-        <SOI passedFirstName={this.state.firstName} passedLastName={this.state.lastName}/>
-        ):(
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h1>Welcome to the Schedule of Investments Frontend Challenge</h1>
+        {this.state.formSubmitted ? (
+          <SOI passedFirstName={this.state.firstName} passedLastName={this.state.lastName}/>
+          ):(
+        <div className="container">
+          <div className="row padding-top text-center">
+            <div className="col-12">
+              <h1><strong>Welcome to the Schedule of Investments Frontend Challenge</strong></h1>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-6">
-            <h2>Please enter your name to access the SOI</h2>
+          <div className="row padding-top">
+            <div className="col-6 text-center">
+              <h2>Please enter your name <br/> to access the SOI</h2>
+            </div>
+            <div className="col-6">
+              <form onSubmit={this.submitNameForm}>
+                <div className="form-group">
+                  <label htmlFor="first-name">First Name</label>
+                  <input type="first-name" className="form-control" id="first-name" placeholder="Enter First Name" onChange={this.userEnteredFirstName} value={this.state.firstName}/>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="last-name">Last Name</label>
+                  <input type="last-name" className="form-control" id="last-name" placeholder="Enter Last Name" onChange={this.userEnteredLastName} value={this.state.lastName}/>
+                </div>
+                <button type="submit" className="btn btn-primary">NEXT ––></button>
+              </form>
+            </div>
           </div>
-          <div className="col-6">
-            <form onSubmit={this.submitNameForm}>
-              <div className="form-group">
-                <label htmlFor="first-name">First Name</label>
-                <input type="first-name" className="form-control" id="first-name" placeholder="Enter First Name" onChange={this.userEnteredFirstName} value={this.state.firstName}/>
-              </div>
-              <div className="form-group">
-                <label htmlFor="last-name">Last Name</label>
-                <input type="last-name" className="form-control" id="last-name" placeholder="Enter Last Name" onChange={this.userEnteredLastName} value={this.state.lastName}/>
-              </div>
-              <button type="submit" className="btn btn-primary">NEXT ––></button>
-            </form>
-          </div>
-        </div>
-        
-      </div>)}
+        </div>)}
       </div>
     );
   }
